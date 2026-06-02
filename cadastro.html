@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiblioTech - Cadastro de Cliente</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="auth-container">
+        <div class="auth-box">
+            <div class="auth-header">
+                <h1>👥 Novo Leitor</h1>
+                <p>Insira os dados do morador para o sistema local</p>
+            </div>
+
+            <form id="form-cadastro">
+                <input type="text" id="cad-nome" placeholder="Nome Completo" required>
+                <input type="text" id="cad-cpf" placeholder="CPF (Apenas números)" required>
+                <input type="email" id="cad-email" placeholder="E-mail Corporativo / Pessoal" required>
+                
+                <button type="submit" class="btn-success">Salvar Cadastro</button>
+            </form>
+
+            <div class="auth-footer">
+                <p><a href="index.html">← Voltar para a Tela de Login</a></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
