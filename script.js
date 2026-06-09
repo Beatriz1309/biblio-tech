@@ -134,8 +134,8 @@ function inicializarPaginaPainel() {
                 return;
             }
 
-            // Exibir as 3 primeiras ocorrências encontradas
-            const filtrados = data.docs.slice(0, 3);
+            // Exibir as 5 primeiras ocorrências encontradas
+            const filtrados = data.docs.slice(0, 5);
             filtrados.forEach(livro => {
                 const titulo = livro.title;
                 const autor = livro.author_name ? livro.author_name[0] : "Autor Desconhecido";
@@ -180,7 +180,7 @@ function inicializarPaginaPainel() {
         if (!livroSelecionado) return;
 
         const dataVencimento = new Date();
-        dataVencimento.setDate(dataVencimento.getDate() + 7);
+        dataVencimento.setDate(dataVencimento.getDate() + 10);
 
         const novoEmprestimo = {
             id: Date.now(),
