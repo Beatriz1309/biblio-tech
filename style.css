@@ -271,3 +271,13 @@ nav {
     animation: pulse 1.5s infinite; 
 }
 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+.hidden {
+    display: none !important;
+}
+.btn-voltar-perfil {
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: center;
+}

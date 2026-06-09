@@ -14,11 +14,27 @@
                 <p>Sistema Gerenciador de Biblioteca</p>
             </div>
             
-            <form id="form-login">
+            <div id="selecao-perfil-inicial">
+                <label style="text-align: center; display: block; margin-bottom: 15px;">
+                    <strong>Selecione seu Perfil de Acesso:</strong>
+                </label>
+                <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                    <button type="button" id="btn-escolha-usuario" class="btn-primary" style="flex: 1; padding: 12px;">👤 Usuário Leitor</button>
+                    <button type="button" id="btn-escolha-admin" class="btn-primary" style="flex: 1; padding: 12px; background-color: var(--dark);">🛡️ Administrador</button>
+                </div>
+            </div>
+
+            <form id="form-login" class="hidden">
                 <label for="select-login"><strong>Selecione o Usuário para Entrar:</strong></label>
-                <select id="select-login" required>
-                    </select>
+                <select id="select-login" required></select>
                 <button type="submit" class="btn-primary">Acessar Painel</button>
+                <button type="button" class="btn-voltar-perfil" style="background: none; color: #64748b; text-decoration: underline; font-size: 0.85rem;">← Mudar perfil de acesso</button>
+            </form>
+
+            <form id="form-login-admin" class="hidden">
+                <p style="text-align: center; color: var(--success); font-weight: 500;">Perfil Administrador detectado.</p>
+                <button type="submit" class="btn-primary" style="background-color: var(--dark);">Entrar como Administrador</button>
+                <button type="button" class="btn-voltar-perfil" style="background: none; color: #64748b; text-decoration: underline; font-size: 0.85rem;">← Mudar perfil de acesso</button>
             </form>
 
             <div class="auth-footer">

@@ -18,42 +18,55 @@
     </nav>
 
     <main class="container">
-        <div class="busca-emprestimo-grid">
-            <section class="panel">
-                <h3>🔍 Buscar Livro na Nuvem</h3>
-                <div class="busca-group">
-                    <input type="text" id="input-busca" placeholder="Digite o título do livro (Ex: Hobbit, Harry Potter)...">
-                    <button id="btn-buscar" class="btn-primary">Pesquisar</button>
-                </div>
-                
-                <div id="loading" class="hidden">Consultando Open Library API...</div>
-                
-                <div id="resultado-busca">
+        
+        <div id="visao-usuario" class="hidden">
+            <div class="busca-emprestimo-grid">
+                <section class="panel">
+                    <h3>🔍 Buscar Livro na Nuvem</h3>
+                    <div class="busca-group">
+                        <input type="text" id="input-busca" placeholder="Digite o título do livro (Ex: Hobbit, Harry Potter)...">
+                        <button id="btn-buscar" class="btn-primary">Pesquisar</button>
                     </div>
-            </section>
-
-            <section class="panel checkout-box">
-                <div>
-                    <h3>✅ Finalizar Empréstimo</h3>
-                    <p><strong>Destinatário da Retirada:</strong> <span id="checkout-cliente-nome">...</span></p>
                     
-                    <div id="livro-selecionado-status" class="status-vazio">
-                        <p>Nenhum livro selecionado para esta conta ainda.</p>
-                    </div>
-                </div>
+                    <div id="loading" class="hidden">Consultando Open Library API...</div>
+                    <div id="resultado-busca"></div>
+                </section>
 
-                <button id="btn-finalizar-emprestimo" class="btn-success action-btn" disabled>
-                    Confirmar Empréstimo ( 10 Dias)
-                </button>
+                <section class="panel checkout-box">
+                    <div>
+                        <h3>✅ Finalizar Empréstimo</h3>
+                        <p><strong>Destinatário da Retirada:</strong> <span id="checkout-cliente-nome">...</span></p>
+                        
+                        <div id="livro-selecionado-status" class="status-vazio">
+                            <p>Nenhum livro selecionado para esta conta ainda.</p>
+                        </div>
+                    </div>
+
+                    <button id="btn-finalizar-emprestimo" class="btn-success action-btn" disabled>
+                        Confirmar Empréstimo (10 Dias)
+                    </button>
+                </section>
+            </div>
+
+            <section class="panel listagem-emprestimos">
+                <h3>📋 Meus Livros em Circulação (Empréstimos Ativos)</h3>
+                <hr>
+                <div id="grid-emprestimos" class="grid-cards"></div>
             </section>
         </div>
 
-        <section class="panel listagem-emprestimos">
-            <h3>📋 Livros em Circulação (Empréstimos Ativos na Comunidade)</h3>
-            <hr>
-            <div id="grid-emprestimos" class="grid-cards">
+        <div id="painel-admin" class="hidden">
+            <section class="panel" style="border-top: 5px solid var(--primary);">
+                <div style="margin-bottom: 20px;">
+                    <h2 style="margin: 0; color: var(--dark);">🛡️ Painel de Controle do Administrador</h2>
+                    <p style="margin: 5px 0 0 0; color: #64748b;">Monitoramento em tempo real de livros alugados no LocalStorage.</p>
                 </div>
-        </section>
+                <hr style="opacity: 0.3;">
+                
+                <div id="grid-admin-cards" class="grid-cards" style="margin-top: 20px;"></div>
+            </section>
+        </div>
+
     </main>
 
     <script src="script.js"></script>
